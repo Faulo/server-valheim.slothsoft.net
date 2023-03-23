@@ -26,3 +26,7 @@ COPY steamclient.so /usr/lib
 WORKDIR /irongate
 ENV PATH="/irongate:${PATH}"
 CMD /bin/bash
+
+# Server
+COPY irongate /irongate
+ENTRYPOINT /irongate/start_server_env.sh
