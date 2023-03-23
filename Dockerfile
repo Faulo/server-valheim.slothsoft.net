@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
 RUN dpkg --add-architecture i386
 RUN apt update
 RUN apt install -y lib32gcc-s1
-COPY steam/steamcmd /bin
-RUN chmod -R 777 /bin
+COPY steam/steamcmd /usr/lib
+RUN chmod -R 777 /usr/lib
 RUN steamcmd --help
 RUN steamcmd +force_install_dir /irongate +login anonymous +app_update 896660 validate +exit
 
