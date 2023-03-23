@@ -29,4 +29,5 @@ CMD /bin/bash
 
 # Server
 COPY irongate /irongate
+RUN chmod -R 777 /irongate
 ENTRYPOINT /irongate/start_server_env.sh
