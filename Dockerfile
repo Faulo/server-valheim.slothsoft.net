@@ -28,6 +28,11 @@ ENV PATH="/irongate:${PATH}"
 CMD /bin/bash
 
 # Server
+EXPOSE 2456/udp
+EXPOSE 2457/udp
+EXPOSE 2456/tcp
+EXPOSE 2457/tcp
+EXPOSE 9001/tcp
 COPY irongate /irongate
 RUN chmod -R 777 /irongate
 ENTRYPOINT /irongate/start_server_env.sh
