@@ -1,9 +1,10 @@
 pipeline {
-    agent any
+    agent 'docker'
     
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('Faulo-Dockerhub')
-        DOCKER_REGISTRY_URL = 'docker.io'
+		DOCKER_REGISTRY = 'https://registry.hub.docker.com'
+		DOCKER_CREDENTIALS = 'Faulo-Dockerhub'
+        DOCKER_IMAGE_AUTHOR = 'faulo'
         DOCKER_IMAGE_NAME = 'valheim'
         DOCKER_IMAGE_TAG = 'latest'
     }
@@ -12,8 +13,8 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKERHUB_CREDENTIALS) {
-                        def dockerImage = docker.build("${DOCKER_REGISTRY_URL}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", ".")
+                    docker.withRegistry(DOCKER_REGISTRY, DOCKER_CREDENTIALS) {
+                        def dockerImage = docker.build("${DOCKER_IMAGE_AUTHOR}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", ".")
                         dockerImage.push()
                     }
                 }
