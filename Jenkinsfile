@@ -1,6 +1,8 @@
 pipeline {
-    agent 'docker'
-    
+    agent {
+		label  'docker'
+    }
+	
     environment {
 		DOCKER_REGISTRY = 'https://registry.hub.docker.com'
 		DOCKER_CREDENTIALS = 'Faulo-Dockerhub'
