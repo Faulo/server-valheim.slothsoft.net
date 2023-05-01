@@ -1,6 +1,6 @@
 pipeline {
     agent {
-		label  'docker'
+		label 'docker'
     }
 	
     environment {
@@ -12,12 +12,16 @@ pipeline {
     }
     
     stages {
-        stage('Build Docker image') {
+        stage('Sign in to Docker Hub') {
             steps {
                 script {
                     docker.withRegistry(DOCKER_REGISTRY, DOCKER_CREDENTIALS) {
-                        def dockerImage = docker.build("${DOCKER_IMAGE_AUTHOR}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", ".")
-                        dockerImage.push()
+						stage('Build Docker image') {
+						  def dockerImage = docker.build("${DOCKER_IMAGE_AUTHOR}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}", ".")
+						  stage('Push Docker image') {
+							dockerImage.push()
+						  }
+						}
                     }
                 }
             }
