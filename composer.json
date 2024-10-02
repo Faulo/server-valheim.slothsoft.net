@@ -1,10 +1,10 @@
 {
 	"name" : "slothsoft/valheim.slothsoft.net",
 	"type" : "project",
-	"description" : "trialoftwo.slothsoft.net",
+	"description" : "valheim.slothsoft.net",
 	"license" : "MIT",
 	"keywords" : [
-		"oilcatz",
+		"slothsoft",
 		"farah-module",
 		"farah-server"
 	],

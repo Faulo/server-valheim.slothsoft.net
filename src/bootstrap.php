@@ -19,8 +19,8 @@ ServerEnvironment::setCacheDirectory($root . DIRECTORY_SEPARATOR . 'cache');
 ServerEnvironment::setLogDirectory($root . DIRECTORY_SEPARATOR . 'log');
 ServerEnvironment::setDataDirectory($root . DIRECTORY_SEPARATOR . 'data');
 
-Kernel::setCurrentSitemap('farah://$COMPOSER_VENDOR@$COMPOSER_MODULE/sitemap');
+Kernel::setCurrentSitemap('farah://slothsoft@valheim.slothsoft.net/sitemap');
 Kernel::setTrackingEnabled(false);
 Dictionary::setSupportedLanguages('en-us');
 
-Module::registerWithXmlManifestAndDefaultAssets('$COMPOSER_VENDOR@$COMPOSER_MODULE', $root . DIRECTORY_SEPARATOR . 'assets');
+Module::registerWithXmlManifestAndDefaultAssets('slothsoft@valheim.slothsoft.net', $root . DIRECTORY_SEPARATOR . 'assets');

@@ -9,6 +9,6 @@ use Slothsoft\Farah\Module\Asset\AssetInterface;
 class SitemapTest extends AbstractSitemapTest {
 
     protected static function loadSitesAsset(): AssetInterface {
-        return (new AssetConfigurationField('farah://$COMPOSER_VENDOR@$COMPOSER_MODULE/sitemap'))->getValue();
+        return (new AssetConfigurationField('farah://slothsoft@valheim.slothsoft.net/sitemap'))->getValue();
     }
 }
