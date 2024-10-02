@@ -46,9 +46,9 @@ services:
         cap_add:
             - SYS_NICE
         environment:
-            - SERVER_NAME="Slothsoft"
-            - SERVER_PASS="slothsoft.net"
-            - WORLD_NAME="Eternia"
+            - SERVER_NAME=Slothsoft
+            - SERVER_PASS=slothsoft.net
+            - WORLD_NAME=Eternia
         volumes:
             - type: bind
               source: ./server-config

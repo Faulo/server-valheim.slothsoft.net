@@ -3,4 +3,21 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# == Composer ==
 /vendor/
+
+# == phpDocumentor ==
+/docs/tmp/
+
+# == PHPUnit ==
+/.phpunit.result.cache
+
+# == Farah ==
+/data/
+/cache/
+/log/
+
+# == Valheim ==
+/server-config/
+/server-data/
