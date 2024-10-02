@@ -50,18 +50,8 @@ services:
             - SERVER_PASS=slothsoft.net
             - WORLD_NAME=Eternia
         volumes:
-            - type: bind
-              source: ./server-config
-              target: /config
-              read_only: false
-              bind:
-                  create_host_path: true
-            - type: bind
-              source: ./server-data
-              target: /opt/valheim
-              read_only: false
-              bind:
-                  create_host_path: true
+            - server-config:/config
+            - server-data:/opt/valheim
         ports:
             - 2456-2457:2456-2457/udp
             - 2456-2457:2456-2457/tcp
@@ -69,6 +59,9 @@ services:
             - vhosts_default
         deploy:
             mode: global
+volumes:
+    server-config:
+    server-data:
 networks:
     vhosts_default:
         external: true
