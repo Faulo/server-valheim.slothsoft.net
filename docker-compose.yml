@@ -41,6 +41,30 @@ services:
                 delay: 5s
                 max_attempts: 3
                 window: 120s
+    server:
+        image: lloesche/valheim-server:latest
+        cap_add:
+            - SYS_NICE
+        environment:
+            - SERVER_NAME="Slothsoft"
+            - SERVER_PASS="slothsoft.net"
+            - WORLD_NAME="Eternia"
+        volumes:
+            - type: bind
+              source: ./server-config
+              target: /config
+              read_only: false
+              bind:
+                  create_host_path: true
+            - type: bind
+              source: ./server-data
+              target: /opt/valheim
+              read_only: false
+              bind:
+                  create_host_path: true
+        ports:
+            - 2456-2457:2456-2457/udp
+            - 2456-2457:2456-2457/tcp
         networks:
             - vhosts_default
 networks:
