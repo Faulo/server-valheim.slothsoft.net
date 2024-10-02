@@ -67,6 +67,8 @@ services:
             - 2456-2457:2456-2457/tcp
         networks:
             - vhosts_default
+        deploy:
+            mode: global
 networks:
     vhosts_default:
         external: true
