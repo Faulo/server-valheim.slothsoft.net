@@ -41,7 +41,7 @@ services:
                 delay: 5s
                 max_attempts: 3
                 window: 120s
-    server:
+    world:
         image: lloesche/valheim-server:latest
         cap_add:
             - SYS_NICE
@@ -55,8 +55,6 @@ services:
         ports:
             - 2456-2457:2456-2457/udp
             - 2456-2457:2456-2457/tcp
-        networks:
-            - vhosts_default
         deploy:
             mode: global
 volumes:
