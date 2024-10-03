@@ -34,7 +34,6 @@ pipeline {
 							def service = "valheim_valheim"
 							sh "docker stack deploy valheim --detach=true --prune --resolve-image=never -c=docker-compose.yml"
 							sh "docker service update --force " + service
-							//sh 'docker exec $(docker ps -q -f name=' + service + ') composer install --no-interaction --no-dev'
 						}
 					}
 				}
