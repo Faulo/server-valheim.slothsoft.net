@@ -41,6 +41,8 @@ services:
                 delay: 5s
                 max_attempts: 3
                 window: 120s
+        networks:
+            - vhosts_default
     world:
         image: lloesche/valheim-server:latest
         cap_add:
