@@ -1,0 +1,39 @@
+services:
+    frontend:
+        image: tmp/${STACK_NAME}:latest
+        volumes:
+            - data:/var/www/data
+        networks:
+            - vhosts_default
+        deploy:
+            mode: global
+            restart_policy:
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+                window: 120s
+    world:
+        image: lloesche/valheim-server:latest
+        cap_add:
+            - SYS_NICE
+        environment:
+            - SERVER_NAME=Slothsoft
+            - SERVER_PASS=slothsoft.net
+            - WORLD_NAME=Eternia
+        volumes:
+            - server-config:/config
+            - server-data:/opt/valheim
+        ports:
+            - 2456-2457:2456-2457/udp
+            - 2456-2457:2456-2457/tcp
+        deploy:
+            mode: global
+
+volumes:
+    data:
+    server-config:
+    server-data:
+
+networks:
+    vhosts_default:
+        external: true
