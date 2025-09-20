@@ -1283,16 +1283,16 @@
         },
         {
             "name": "slothsoft/farah",
-            "version": "1.19.5",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Faulo/slothsoft-farah.git",
-                "reference": "c0029f4ae0b5725011bcb1f3c67e20b2075bce35"
+                "reference": "37cd4a02190fa9ec051c857c7d4bbc1a4c0d8f05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Faulo/slothsoft-farah/zipball/c0029f4ae0b5725011bcb1f3c67e20b2075bce35",
-                "reference": "c0029f4ae0b5725011bcb1f3c67e20b2075bce35",
+                "url": "https://api.github.com/repos/Faulo/slothsoft-farah/zipball/37cd4a02190fa9ec051c857c7d4bbc1a4c0d8f05",
+                "reference": "37cd4a02190fa9ec051c857c7d4bbc1a4c0d8f05",
                 "shasum": ""
             },
             "require": {
@@ -1324,7 +1324,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.19.x-dev"
+                    "dev-main": "1.20.x-dev"
                 }
             },
             "autoload": {
@@ -1355,9 +1355,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Faulo/slothsoft-farah/issues",
-                "source": "https://github.com/Faulo/slothsoft-farah/tree/1.19.5"
+                "source": "https://github.com/Faulo/slothsoft-farah/tree/1.20.0"
             },
-            "time": "2025-09-19T16:47:44+00:00"
+            "time": "2025-09-20T17:51:17+00:00"
         },
         {
             "name": "slothsoft/w3c",
