@@ -10,7 +10,6 @@
 
 	<fragment name="pages">
 		<fragment name="home">
-            <link-stylesheet ref="//slothsoft@core/api/HTML5" />
             <use-template ref="/xsl/_home" />
 		</fragment>
 	</fragment>
