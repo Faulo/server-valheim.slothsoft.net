@@ -9,11 +9,28 @@ services:
             SERVER_NAME: ${SERVER_NAME}
             VIRTUAL_HOST: ${SERVER_NAME}
             LETSENCRYPT_HOST: ${SERVER_NAME}
+        volumes:
+            - /var/vhosts/${SERVER_NAME}/:/var/www/data/
         networks:
             - vhosts
         expose:
             - 80
         restart: unless-stopped
+    world:
+       image: lloesche/valheim-server:latest
+       cap_add:
+           - SYS_NICE
+       environment:
+           - SERVER_NAME=${SERVER_NAME}
+           - SERVER_PASS=slothsoft.net
+           - WORLD_NAME=Eternia
+       volumes:
+           - /var/vhosts/${SERVER_NAME}/server-config:/config
+           - /var/vhosts/${SERVER_NAME}/server-data:/opt/valheim
+       ports:
+           - 2456-2457:2456-2457/udp
+           - 2456-2457:2456-2457/tcp
+       restart: unless-stopped
 
 networks:
     vhosts:
