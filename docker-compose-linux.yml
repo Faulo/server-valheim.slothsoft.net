@@ -31,6 +31,8 @@ services:
         ports:
             - 2456-2457:2456-2457/udp
             - 2456-2457:2456-2457/tcp
+        labels:
+            - "com.centurylinklabs.watchtower.enable=true"
         restart: unless-stopped
 
 networks:
