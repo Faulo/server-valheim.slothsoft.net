@@ -23,11 +23,11 @@ services:
         cap_add:
             - SYS_NICE
         environment:
-            - SERVER_NAME: Slothsoft
-            - SERVER_PORT: 2456
-            - SERVER_PASS: slothsoft.net
-            - SERVER_PUBLIC: false
-            - WORLD_NAME: Eternia
+            SERVER_NAME: Slothsoft
+            SERVER_PORT: 2456
+            SERVER_PASS: slothsoft.net
+            SERVER_PUBLIC: false
+            WORLD_NAME: Eternia
         volumes:
             - /var/vhosts/${SERVER_NAME}/server-config:/config
             - /var/vhosts/${SERVER_NAME}/server-data:/opt/valheim
