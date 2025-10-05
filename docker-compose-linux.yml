@@ -11,6 +11,8 @@ services:
             LETSENCRYPT_HOST: ${SERVER_NAME}
         volumes:
             - /var/vhosts/${SERVER_NAME}/:/var/www/data/
+        tmpfs:
+            - /var/www/cache/:uid=33,gid=33
         networks:
             - vhosts
         expose:
