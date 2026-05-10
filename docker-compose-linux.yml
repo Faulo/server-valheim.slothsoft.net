@@ -10,7 +10,7 @@ services:
             VIRTUAL_HOST: ${SERVER_NAME}
             LETSENCRYPT_HOST: ${SERVER_NAME}
         volumes:
-            - /var/vhosts/${SERVER_NAME}/:/var/www/data/
+            - farah-data:/var/www/data/
         tmpfs:
             - /var/www/cache/:uid=33,gid=33
         networks:
@@ -31,8 +31,8 @@ services:
             SERVER_PUBLIC: false
             WORLD_NAME: Eternia
         volumes:
-            - /var/vhosts/${SERVER_NAME}/server-config:/config
-            - /var/vhosts/${SERVER_NAME}/server-data:/opt/valheim
+            - world-config:/config
+            - world-data:/opt/valheim
         ports:
             - 2456-2457:2456-2457/udp
             - 2456-2457:2456-2457/tcp
@@ -44,3 +44,7 @@ networks:
     vhosts:
         external: true
 
+volumes:
+    farah-data:
+    world-config:
+    world-data:
